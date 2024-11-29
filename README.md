@@ -1,50 +1,33 @@
-# Welcome to your Expo app 👋
+## :memo: Sobre
+O app tem como objetivo principal cadastrar novas tarefas em suas atividades cotidianas para manter sua organização. O destaque vai para o uso de IA (Gemini) que auxilia nas seguintes tarefas:
+- Geração automática da descrição baseado no título da tarefa (formulário de adicionar nova tarefa)
+- Calculo do tempo estimado da tarefa baseado em sua descrição (formulário de adicionar nova tarefa)
+- Na página inicial do app também é disponibilizado frases motivacionais para o usuário
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## 🔎  Preview
 
-## Get started
+<img src="https://github.com/user-attachments/assets/09015610-8274-45e4-88b4-4c8400094c46" maxWidth="500" height="400" />
+<img src="https://github.com/user-attachments/assets/9f5c79b9-7457-4ab5-8bde-bb3d2d246787" maxWidth="500" height="400" />
+<img src="https://github.com/user-attachments/assets/e54e7929-fee6-44df-aa15-7d7497eb3051" maxWidth="500" height="400" />
 
-1. Install dependencies
+## :rocket: Getting Started 
 
-   ```bash
-   npm install
-   ```
+Install project with npm
 
-2. Start the app
+```bash 
+  # Clonning project
+  $ git clone https://github.com/pedrogomes1/todo-app && cd todo-app
+  
+  # Install the dependencies
+  $ npm install
 
-   ```bash
-    npx expo start
-   ```
+  # Start app
+  $ npm run ios
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+  # Running app:
+  # To run the project you need to have an iOS or Android emulator running.
+  # To run with iOS, right after npm start press the I key and wait for expo to run the app inside the emulator
+  # To run with android, right after npm start press the A key and wait for expo to run the app inside the emulator
+  # To run on the physical device, download Expo Dev from the App store / Google play
+  # And scan the QR code that will appear after running the npm start command
 ```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
