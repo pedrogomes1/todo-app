@@ -1,19 +1,22 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
-import 'react-native-reanimated';
-
-import { useColorScheme } from '@/hooks/useColorScheme';
-
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
+import * as SplashScreen from "expo-splash-screen";
+import { NativeBaseProvider, extendTheme } from "native-base";
+import {
+  Inter_400Regular,
+  Inter_500Medium,
+  Inter_600SemiBold,
+  Inter_700Bold,
+  useFonts,
+} from "@expo-google-fonts/inter";
+import { Stack } from "expo-router";
+import { useEffect } from "react";
+import TasksContextProvider from "@/context/tasks";
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
   const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    Inter_400Regular,
+    Inter_500Medium,
+    Inter_600SemiBold,
+    Inter_700Bold,
   });
 
   useEffect(() => {
@@ -26,12 +29,32 @@ export default function RootLayout() {
     return null;
   }
 
+  const theme = extendTheme({
+    components: {
+      Text: {
+        baseStyle: {
+          color: "#FFF",
+        },
+      },
+    },
+  });
+
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-    </ThemeProvider>
+    <NativeBaseProvider theme={theme}>
+      <TasksContextProvider>
+        <Stack>
+          <Stack.Screen name="index" options={{ headerShown: false }} />
+          <Stack.Screen
+            name="addTodo"
+            options={{
+              headerTitle: "",
+              title: "",
+              headerBackTitleVisible: false,
+              headerTransparent: true,
+            }}
+          />
+        </Stack>
+      </TasksContextProvider>
+    </NativeBaseProvider>
   );
 }
